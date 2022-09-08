@@ -1,0 +1,84 @@
+
+### 企业微信报警消息发送请求URL:
+http://{Base_url}/sendAlert/wechat/none/{token}?user={user_name}
+---
+tags:
+  - 报警发送接口
+parameters:
+  - name: sendtype
+    in: path
+    type: string
+    required: true
+    enum: ['ding', 'mail']
+    description: 发送消息方式
+    default: "ding"
+  - name: msgfrom
+    in: path
+    type: string
+    required: true
+    enum: ['alertmanager', 'cloud', 'none']
+    description: 消息来源
+    default: "none"
+  - name: token
+    in: path
+    type: string
+    required: true
+    description: 接口token认证
+  - name: usergroup
+    in: query
+    type: string
+    required: true
+    description: 消息接收组(多人分隔符使用';'或'_')
+  - name: timeStart
+    in: query
+    type: string
+    description: 消息过滤开始时间
+  - name: timeEnd
+    in: query
+    type: string
+    description: 消息过滤结束时间
+  - name: body
+    in: body
+    required: true
+    schema:
+      id: sendAlert
+      properties:
+        监控信息:
+          type: string
+          default: "test"
+        监控内容:
+          type: string
+          default: "test"
+        告警时间:
+          type: string
+          default: "test"
+        恢复时间:
+          type: string
+          default: "test"
+responses:
+  502:
+    description: 发送消息失败回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "502"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"
+  200:
+    description: 发送消息成功回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "200"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"

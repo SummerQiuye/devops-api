@@ -1,0 +1,46 @@
+
+### 用户修改密码URL:
+http://{Base_url}/forgotPasswd/{user}/{passwd}
+---
+tags:
+  - ldap管理接口
+parameters:
+  - name: user
+    in: path
+    type: string
+    required: true
+    description: 用户名
+    default: "test"
+  - name: mail
+    in: path
+    type: string
+    required: true
+    description: 用户邮箱地址
+    default: "test@novelpro.cn"
+responses:
+  502:
+    description: 发送消息失败回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "502"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"
+  200:
+    description: 发送消息成功回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "200"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"

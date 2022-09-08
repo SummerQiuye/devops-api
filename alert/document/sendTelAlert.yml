@@ -1,0 +1,51 @@
+
+### 报警语音消息发送请求URL:
+http://{Base_url}/sendTelAlert/{params}/{token}?tel={phone1_phone2}
+---
+tags:
+  - 报警发送接口
+parameters:
+  - name: params
+    in: path
+    type: string
+    required: true
+    description: 发送消息参数
+    default: "测试|test"
+  - name: token
+    in: path
+    type: string
+    required: true
+    description: 接口token认证
+  - name: tel
+    in: query
+    type: string
+    required: false
+    description: 发送消息电话列表
+    default: "phone1_phone2"
+responses:
+  502:
+    description: 发送消息失败回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "502"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"
+  200:
+    description: 发送消息成功回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "200"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"

@@ -1,0 +1,58 @@
+
+### 搜索资产数据API:
+---
+tags:
+  - cmdb管理接口
+parameters:
+  - name: ptype
+    in: path
+    type: string
+    required: true
+    description: 资产类型
+    default: "%"
+  - name: searchType
+    in: path
+    type: string
+    required: true
+    enum: ['name', 'internal_ip', 'owner']
+    description: 搜索方式
+    default: "name"
+  - name: data
+    in: query
+    type: string
+    description: 搜索关键字
+  - name: limit
+    in: query
+    type: string
+    description: 单页数量
+  - name: offset
+    in: query
+    type: string
+    description: 偏移量
+responses:
+  502:
+    description: 发送消息失败回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "502"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"
+  200:
+    description: 发送消息成功回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "200"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"

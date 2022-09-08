@@ -1,0 +1,46 @@
+
+### 资产更多信息API:
+---
+tags:
+  - cmdb管理接口
+parameters:
+  - name: ptype
+    in: path
+    type: string
+    required: true
+    enum: ['CVM', 'DATABASE']
+    description: 资产类型
+    default: "CVM"
+  - name: internal_ip
+    in: path
+    type: string
+    required: true
+    description: 资产内网IP
+    default: ""
+responses:
+  502:
+    description: 发送消息失败回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "502"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"
+  200:
+    description: 发送消息成功回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "200"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"

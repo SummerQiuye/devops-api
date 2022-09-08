@@ -1,0 +1,40 @@
+
+### 获取集群当前pod运行状态接口请求URL:
+http://{Base_url}/getPodStatus/{env}
+---
+tags:
+  - k8s管理接口
+parameters:
+  - name: env
+    in: path
+    type: string
+    required: true
+    description: namespace环境名
+    default: "dev|prod|ops"
+responses:
+  502:
+    description: 发送消息失败回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "502"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"
+  200:
+    description: 发送消息成功回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "200"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"

@@ -1,0 +1,82 @@
+
+### 添加资产数据API:
+---
+tags:
+  - cmdb管理接口
+parameters:
+  - name: ptype
+    in: path
+    type: string
+    required: true
+    enum: ['CVM', 'DATABASE']
+    description: 添加资产类型
+    default: "CVM"
+  - name: body
+    in: body
+    required: true
+    schema:
+      id: addProperty
+      properties:
+        basic:
+          description: property basic data
+          schema:
+            id: basic
+            properties:
+              name:
+                type: string
+              internal_ip:
+                type: string
+              env:
+                type: string
+              config:
+                type: string
+              line:
+                type: string
+              owner:
+                type: string
+              usage:
+                type: string
+        more:
+          description: property detail data
+          schema:
+            id: more
+            properties:
+              VPC:
+                type: string
+              external_ip:
+                type: string
+              region:
+                type: string
+              system:
+                type: string
+              monitor:
+                type: string
+              image:
+                type: string
+responses:
+  502:
+    description: 发送消息失败回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "502"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"
+  200:
+    description: 发送消息成功回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "200"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"

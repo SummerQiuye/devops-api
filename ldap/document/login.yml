@@ -1,0 +1,46 @@
+
+### 用户登录验证URL:
+http://{Base_url}/login/{user}/{passwd}
+---
+tags:
+  - ldap管理接口
+parameters:
+  - name: user
+    in: path
+    type: string
+    required: true
+    description: 用户名
+    default: "test"
+  - name: passwd
+    in: path
+    type: string
+    required: true
+    description: 用户密码
+    default: "test123456"
+responses:
+  502:
+    description: 发送消息失败回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "502"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"
+  200:
+    description: 发送消息成功回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "200"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"

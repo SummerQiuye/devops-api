@@ -1,0 +1,23 @@
+{
+  "count": 64,
+  "data": [
+    {
+      "config": "",
+      "createDate": "Fri, 23 Apr 2021 14:32:29 GMT",
+      "id": 58,
+      "lastUpdateDate": "Thu, 22 Jul 2021 15:56:25 GMT",
+      "lastUpdateRemark": "init",
+      "lastUpdateUser": "ops",
+      "name": "OMS-active-api-server",
+      "owner": "刘成杰",
+      "updateCount": 0,
+      "usage": null,
+      "useCount": null,
+      "version": "v1.0.0"
+    }
+  ],
+  "limit": 50,
+  "msg": "sql执行成功",
+  "offset": 0,
+  "stats": "200"
+}

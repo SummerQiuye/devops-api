@@ -1,0 +1,60 @@
+
+### 创建项目tags请求URL:
+http://{Base_url}/createTag/{project_id}/{ref}/{build_id}
+---
+tags:
+  - CICD管理接口
+parameters:
+  - name: project_id
+    in: path
+    type: string
+    required: true
+    description: gitlab项目id
+    default: "1"
+  - name: ref
+    in: path
+    type: string
+    required: true
+    description: gitlab项目创建标签分支名
+    default: "master"
+  - name: version
+    in: path
+    type: string
+    required: true
+    description: 发布版本
+    default: "1.0"
+#  - name: description
+#    in: body
+#    required: true
+#    schema:
+#      properties:
+#        description:
+#          type: string
+#          default: "发布稳定新版本:  内容更新"
+responses:
+  502:
+    description: 发送消息失败回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "502"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"
+  200:
+    description: 发送消息成功回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "200"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"

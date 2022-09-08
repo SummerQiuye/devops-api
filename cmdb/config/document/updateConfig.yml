@@ -1,0 +1,82 @@
+
+### 配置信息更新API:
+---
+tags:
+  - cmdb管理接口
+parameters:
+  - name: configEnv
+    in: path
+    type: string
+    required: true
+    enum: ['dev', 'prod']
+    description: 配置环境
+    default: "dev"
+  - name: body
+    in: body
+    required: true
+    schema:
+      id: updateConfig
+      properties:
+        newConfig:
+          description: new config data
+          schema:
+            id: newConfig
+            properties:
+              name:
+                type: string
+              owner:
+                type: string
+              usage:
+                type: string
+              config:
+                type: string
+              version:
+                type: string
+        historyConfig:
+          description: history config data
+          schema:
+            id: historyConfig
+            properties:
+              name:
+                type: string
+              owner:
+                type: string
+              usage:
+                type: string
+              config:
+                type: string
+              version:
+                type: string
+        version:
+          type: string
+          default: ""
+        lastUpdateRemark:
+          type: string
+          default: ""
+responses:
+  502:
+    description: 发送消息失败回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "502"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"
+  200:
+    description: 发送消息成功回执
+    schema:
+      properties:
+        code:
+          type: string
+          default: "200"
+        msg:
+          type: string
+          default: ""
+        status:
+          type: string
+          default: "error"

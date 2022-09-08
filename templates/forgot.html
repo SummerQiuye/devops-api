@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>忘记密码找回</title>
+</head>
+<body>
+    <p id="newpasswd" class="{{newpasswd}}"></p>
+</body>
+<script>
+    function alertPass() {
+        let pass = document.getElementById("newpasswd");
+        console.log(pass.className);
+        if (pass === "preAuthFailed") {
+            alert("前置身份验证失败！");
+            window.close();
+        }else {
+            alert("您的新密码为(请拷贝后点击确定，页面将关闭):\n"+pass.className);
+            window.close();
+        }
+
+    }
+    alertPass()
+</script>
+</html>

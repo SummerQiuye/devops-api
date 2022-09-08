@@ -1,0 +1,24 @@
+GET http://devops-api.shruisong.cn/cmdb/config/get/prod?name=OMS-active-api-server
+Accept: */*
+Cache-Control: no-cache
+
+<> 2021-12-15T053838.200.json
+
+###
+
+GET http://devops-api.shruisong.cn/cmdb/config/get/prod?name=OMS-active-api-server
+Accept: */*
+Cache-Control: no-cache
+
+<> 2021-12-15T053820.200.json
+
+###
+
+GET http://devops-api.shruisong.cn/cmdb/config/get/prod?name=OMS-active-api-server
+Accept: */*
+Cache-Control: no-cache
+
+<> 2021-12-15T053812.200.json
+
+###
+
