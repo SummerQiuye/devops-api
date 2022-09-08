@@ -7,8 +7,8 @@ from email.header import Header
 
 # 第三方 SMTP 服务
 mail_host = "smtp.exmail.qq.com"  # 设置服务器
-mail_user = "it@hunteron.com"  # 用户名
-mail_pass = "zV4iF0LXHfnEuA"  # 口令
+mail_user = "it@"  # 用户名
+mail_pass = ""  # 口令
 
 
 def sendMail(mail, mailHeader, mailData):
@@ -38,4 +38,4 @@ def sendMail(mail, mailHeader, mailData):
 # <p>你好，后台已重置你的LDAP账户密码，<br/>新密码为：</p>
 # <p>34vbivb</p>
 # '''
-# sendMail(mail="qiuye@novelpro.cn", mailHeader="忘记密码找回", mailData=mailContent)
+# sendMail(mail="@.cn", mailHeader="忘记密码找回", mailData=mailContent)
