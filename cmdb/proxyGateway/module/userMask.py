@@ -33,7 +33,7 @@ class userMask:
             os.system("rm -rf mac_address_proxy_file/" +
                       userName +
                       "* & cp proxy.pac mac_address_proxy_file/" + userProxyName)
-            return "http://47.103.223.252:8200/" + userProxyName
+            return "http://ip:8200/" + userProxyName
         except Exception as e:
             print(e)
             capture_exception(e)
