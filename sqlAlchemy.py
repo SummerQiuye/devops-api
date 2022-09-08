@@ -3,7 +3,7 @@ from __init__ import app
 from flask_sqlalchemy import SQLAlchemy
 
 app.config[
-    'SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:HunterOn263@172.20.10.1:3306/devops?charset=utf8&autocommit=true'
+    'SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@:3306/devops?charset=utf8&autocommit=true'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SQLALCHEMY_POOL_SIZE'] = 100
 app.config['SQLALCHEMY_POOL_TIMEOUT'] = 10
