@@ -22,7 +22,7 @@ def Proxy_on():
     if mac in access_mac:
         print("mac地址校验通过：access.")
 
-        os.system('networksetup -setautoproxyurl Wi-Fi http://47.103.223.252:8200/proxy.pac')
+        os.system('networksetup -setautoproxyurl Wi-Fi http:/proxy.pac')
         os.system('networksetup -setautoproxystate "WI-FI" on')
         messagebox.showinfo("猎上服务", "内网通道已开启")
     else:
@@ -32,7 +32,7 @@ def Proxy_on():
 
 
 def Proxy_off():
-    # os.system('networksetup -setautoproxyurl Wi-Fi http://47.103.223.252:8200/proxy.pac')
+    # os.system('networksetup -setautoproxyurl Wi-Fi http:/proxy.pac')
     os.system('networksetup -setautoproxystate "WI-FI" off')
     messagebox.showinfo("猎上服务", "内网通道已关闭")
 
